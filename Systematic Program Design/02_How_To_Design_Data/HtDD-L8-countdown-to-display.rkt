@@ -50,7 +50,7 @@
 (check-expect (countdown->image 5) (text (number->string 5) 24 "black"))
 (check-expect (countdown->image "complete") (text "Happy New Year!!!" 24 "red"))
 
-;(define (countdown->imagee c) (square 0 "solid" "white"))
+;(define (countdown->image c) (square 0 "solid" "white"))
 
 ; <use template from Countdown>
 
