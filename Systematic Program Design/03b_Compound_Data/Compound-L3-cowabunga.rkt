@@ -45,6 +45,11 @@
 (define RCOW .)
 (define LCOW .)
 
+(define RCOW- (rotate -2 RCOW))
+(define RCOW+ (rotate  2 RCOW))
+(define LCOW- (rotate -2 LCOW))
+(define LCOW+ (rotate  2 LCOW))
+
 (define MTS (empty-scene WIDTH HEIGHT))
 
 ;; ==========
@@ -73,7 +78,7 @@
 ;; Functions
 
 ;; Cow -> Cow
-;; called to make the cow go for a walk; start with (main (make-cow 0 3)
+;; called to make the cow go for a walk; start with (main (make-cow 0 3))
 ;; no tests for main function
 (define (main c)
   (big-bang c
@@ -101,8 +106,8 @@
 
 ;; Cow -> Image
 ;; render the correct image of the cow at its x-position on MTS
-(check-expect (render-cow (make-cow 99 3)) (place-image RCOW 99 CTR-Y MTS))
-(check-expect (render-cow (make-cow 33 -3)) (place-image LCOW 33 CTR-Y MTS))
+(check-expect (render-cow (make-cow 99 3))  (place-image RCOW- 99 CTR-Y MTS))
+(check-expect (render-cow (make-cow 33 -3)) (place-image LCOW- 33 CTR-Y MTS))
 
 ;(define (render-cow c) MTS)   ;stub
 
@@ -111,22 +116,36 @@
   (place-image (choose-image c) (cow-x c) CTR-Y MTS))
 
 ;; Cow -> Image
-;; produce RCOW or LCOW depending on direction cow is going; LCOW if dx = 0
-(check-expect (choose-image (make-cow 10  3)) RCOW)
-(check-expect (choose-image (make-cow 11 -3)) LCOW)
-(check-expect (choose-image (make-cow 11  0)) LCOW)
+;; choose [L|R]COW[+|-] depending on cow's direction and position
+(check-expect (choose-image (make-cow 10  3)) RCOW+)
+(check-expect (choose-image (make-cow 11  6)) RCOW-)
+(check-expect (choose-image (make-cow 10 -3)) LCOW+)
+(check-expect (choose-image (make-cow 11 -6)) LCOW-)
+(check-expect (choose-image (make-cow 11  0)) LCOW-)
 
 ;(define (choose-image c) RCOW)   ;stub
 
 ;took template from Cow
 (define (choose-image c)
   (if (> (cow-dx c) 0)
-      RCOW
-      LCOW))
+      (if (odd? (cow-x c))
+          RCOW-
+          RCOW+)
+      (if (odd? (cow-x c))
+          LCOW-
+          LCOW+)))
 
 
-  ;; Cow Key-Event -> Cow
-  ;; reverse direction of cow travel when space bar is pressed
-  ;; !!!
-  (define (handle-key c ke) c)   ;stub
-  
+;; Cow Key-Event -> Cow
+;; reverse direction of cow travel when space bar is pressed
+(check-expect (handle-key (make-cow 60  3) " ") (make-cow 60 -3))
+(check-expect (handle-key (make-cow 45 -3) " ") (make-cow 45  3))
+(check-expect (handle-key (make-cow 60  3) "a") (make-cow 60  3))
+(check-expect (handle-key (make-cow 45 -3) "a") (make-cow 45 -3))
+
+;(define (handle-key c ke) c)   ;stub
+;template from KeyEvent
+
+(define (handle-key c ke)
+  (cond [(key=? ke " ") (make-cow (cow-x c) (- (cow-dx c)))]
+        [else c]))
