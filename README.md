@@ -10,14 +10,24 @@ It is designed according to the degree requirements of undergraduate computer sc
 
 ## Intro CS - Maths
 
-| Courses                                                                | Duration |      Effort      | Completion |                              Topics                              |
-| :--------------------------------------------------------------------- | :------: | :--------------: | :--------: | :--------------------------------------------------------------: |
-| [Python for Everybody](https://github.com/Kure-ru/OSSU/tree/main/py4e) | 10 weeks |  10 hours/week   |     ✅     |            `simple programs` `simple data structures`            |
-| [Introduction to Computer Science - CS50](https://cs50.harvard.edu/x/) | 12 weeks | 10-20 hours/week |     ✅     | `problem-solving` `algorithms` `data structures` `C programming` |
-| [Introduction to Mathematical Thinking](https://www.coursera.org/learn/mathematical-thinking) | 10 weeks | 4 hours/week |     ⬜️     | `Mathematical mindset` `Number Theory` |
+| Courses                                                                                       | Duration |      Effort      | Completion |                              Topics                              |
+| :-------------------------------------------------------------------------------------------- | :------: | :--------------: | :--------: | :--------------------------------------------------------------: |
+| [Python for Everybody](https://github.com/Kure-ru/OSSU/tree/main/py4e)                        | 10 weeks |  10 hours/week   |     ✅     |            `simple programs` `simple data structures`            |
+| [Introduction to Computer Science - CS50](https://cs50.harvard.edu/x/)                        | 12 weeks | 10-20 hours/week |     ✅     | `problem-solving` `algorithms` `data structures` `C programming` |
+| [Introduction to Mathematical Thinking](https://www.coursera.org/learn/mathematical-thinking) | 10 weeks |   4 hours/week   |    ⬜️     |              `Mathematical mindset` `Number Theory`              |
 
 ## Core CS
+
+### Core programming
+
+#### Courses
 
 | Courses                                                                                  | Duration |     Effort      | Completion |                              Topics                               |
 | :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
 | [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |    ⬜️     | `program design` `functional programming` `testing` `abstraction` |
+
+#### Readings
+
+| Name                                                                                 | Author(s)                                                                      | Completion |
+| :----------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- | :--------: |
+| [How to Design Programs, Second Edition](https://htdp.org/2023-8-14/Book/index.html) | Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi |    ⬜️     |
