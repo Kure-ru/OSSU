@@ -193,3 +193,24 @@ Numbers are classified in two ways:
 
 - by construction: `integer?`, `rational?`, `real?`, `complex?`
 - by exactness: `exact?`, `inexact?`
+
+## 2 Functions and Programs
+
+### 2.1 Functions
+
+In BSL, functions are **defined** using the `(define)` construct. A function consists of:
+
+- A **name**
+- One or more **variables** (inputs or parameters)
+- A **body** (an expression that computes the output)
+
+```scheme
+(define (FunctionName Variable ... Variable)
+  Expression)
+```
+
+Once a function is defined, it can be **applied** by calling its name and passing the appropriate number of arguments. The number of arguments must match the number of parameters in the definition.
+
+```scheme
+(sum 4 5)   ;9 (4 + 5)
+```
