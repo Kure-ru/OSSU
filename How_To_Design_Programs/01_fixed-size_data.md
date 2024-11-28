@@ -214,3 +214,104 @@ Once a function is defined, it can be **applied** by calling its name and passin
 ```scheme
 (sum 4 5)   ;9 (4 + 5)
 ```
+
+### 2.2 Computing
+
+When a function is applied, DrRacket follows these steps:
+
+1. Evaluate argument expressions
+2. **Check that the number of argument** matches the number of function parameters.
+3. **Substitute** the parameters with argument values and **compute** the result
+
+### 2.3 Composing Functions
+
+Programs are composed of:
+
+- Main function
+- Auxiliary (helper) functions
+
+This structure makes programs **modular**, easier to understand and maintainable.
+
+Each function handles a distinct part of the task, adhering to the principle: _Define one function per task_.
+
+**Advantages of modularity** are that smaller functions are easier to design and debug. Changing to a specific part of the problem only require modifying the corresponding function.
+
+### 2.4 Global Constants
+
+Global constants store values that are:
+
+- used frequently across functions
+- unchanging throughout the program
+
+Constants make programs easier to maintain and read.
+
+Defining a global function:
+
+```scheme
+(define CONSTANT-NAME VALUE)
+```
+
+**Conventions**\
+Use UPPERCASE names for global constants.\
+Use meaningful names to clarify their purpose in the program.
+
+**Advantages**
+
+- Changing a constant value automatically updates all its uses in the program.
+- Prevents errors by avoiding repetitive hardcoding of values.
+- Readers can quickly identify constants and their purpose.
+
+_For every constant mentioned in a problem statement, introduce one constant definition._
+
+### 2.5 Programs
+
+A **program** consists of:
+
+- Function definitions
+- Constant definitions
+
+Programs are classified in two categories:
+
+- Batch programs
+- Interactive programs
+
+A **batch program** takes all its inputs at once, processes them, and produces the output.
+
+**Batch program I/O**
+
+- `read-file`: reads the entire content of a file as a string
+- `write-file`: writes a string to a file or outputs to `'stdout`
+
+```scheme
+> (write-file "sample.dat" "212")
+"sample.dat"
+
+> (read-file "sample.dat")
+"212"
+```
+
+Example batch program: Fahrenheit to Celsius converter
+
+```scheme
+(define (C f)
+  (* 5/9 (- f 32)))
+```
+
+```scheme
+(define (convert in out)
+  (write-file out            ;Writes the result to the output file.
+    (string-append
+      (number->string
+        (C
+          (string->number
+            (read-file in)))) ;Reads input file content
+```
+
+An **interactive program** responds to events (e.g. user inputs, clicks...). It maps events to specific functions (event handlers), and informs the operating system about how to handle events. It is often created for Graphical User Interfaces (GUI).
+
+The Big-Bang mechanism is a framework to define interactive programs in BSL. Its key components are:
+
+- initial state: starting point for the program
+- event handlers: (`on-tick`, `on-key`, ...)
+- render function: (`to-draw`) which converts state into a visual representation
+- stop condition: (`stop-when`) which determines when the program ends.

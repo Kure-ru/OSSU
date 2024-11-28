@@ -102,4 +102,4 @@
 
 ;; -------------
 ;; Exercice 10
-;;Now relax, eat, sleep, and then tackle the next chapter.
+;; Now relax, eat, sleep, and then tackle the next chapter.
