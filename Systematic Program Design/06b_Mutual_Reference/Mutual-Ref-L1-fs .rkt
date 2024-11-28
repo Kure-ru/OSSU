@@ -159,3 +159,35 @@
 ;     
 
 
+(define MT (rectangle 25 15 "solid" "white"))
+(define TEXT-SIZE 14)
+(define TEXT-COLOR "black")
+
+
+;; Element -> Image
+;; ListOfElement -> Image
+;; consume an Element and produce a rendering of the tree
+(check-expect (render--element F1) (text "F1" TEXT-SIZE TEXT-COLOR))
+(check-expect (render--element D4) (above  (text "D4" TEXT-SIZE TEXT-COLOR)
+                                           (beside  (text "F1" TEXT-SIZE TEXT-COLOR)
+                                                    MT
+                                                    (text "F2" TEXT-SIZE TEXT-COLOR))))
+
+;(define (render--element e) MT)
+;(define (render--loe loe) MT)
+
+(define (render--element e)
+  (if (empty? (elt-subs e))
+      (text (elt-name e) TEXT-SIZE TEXT-COLOR)
+      (above (text (elt-name e) TEXT-SIZE TEXT-COLOR)
+             (render--loe (elt-subs e)))))
+
+(define (render--loe loe)
+  (cond [(empty? loe) MT]
+        [(empty? (rest loe))
+         (render--element (first loe))]
+        [else
+         (beside (render--element (first loe))
+                 MT
+                 (render--loe (rest loe)))]))
+
