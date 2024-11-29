@@ -304,7 +304,7 @@ Example batch program: Fahrenheit to Celsius converter
       (number->string
         (C
           (string->number
-            (read-file in)))) ;Reads input file content
+            (read-file in))))))) ;Reads input file content
 ```
 
 An **interactive program** responds to events (e.g. user inputs, clicks...). It maps events to specific functions (event handlers), and informs the operating system about how to handle events. It is often created for Graphical User Interfaces (GUI).
@@ -315,3 +315,223 @@ The Big-Bang mechanism is a framework to define interactive programs in BSL. Its
 - event handlers: (`on-tick`, `on-key`, ...)
 - render function: (`to-draw`) which converts state into a visual representation
 - stop condition: (`stop-when`) which determines when the program ends.
+
+## 3 How to Design Programs
+
+Programming is about mastery of:
+
+- a language with vocabulary, grammar, semantics
+- how to get from a problem statement to a program
+
+**Systematic design vs. "Garage programming"**\
+Muddling through without structure often leads to limited, unsustainable programs.\
+Programs need to be comprehensible, maintainable, and adaptable for other developers and your future self.
+
+**Key aspects of good programming**\
+Clear documentation about what the program does, its expected inputs and outputs\
+Logical connections between the program and the problem statement to facilitate changes and debugging.
+
+**The Design recipe**\
+Systematic approach to create and organize programs based on **problem data**.
+
+### 3.1 Designing Functions
+
+A program transforms **information into data**, processes it, and converts it **back to information**.
+
+The **Model-View-Controller** (MVC) design separates **data processing** (core computation) from **parsing** (information to data) and **rendering** (data to information).
+
+A [**data definition**](./00_preface.md) defines how information in the program's domain is represented as data in the code. It names the data class, and explains what it represents.
+
+```scheme
+; A Temperature is a Number
+; interpretation: represents Celsius degrees
+```
+
+**The design process**
+
+1. Represent information as data
+
+```scheme
+; We use numbers to represent centimeters.
+```
+
+2. Write a signature, purpose, function header
+
+```scheme
+; << signature >>
+; Number String Image -> Image
+
+; << purpose (what does the function compute?) >>
+; adds s to img,
+; y pixels from the top and 10 from the left
+
+; << header, simplistic function definition >>
+(define (add-image y s img)
+  (empty-scene 100 100))
+```
+
+3. Add functional examples
+
+```scheme
+; Number -> Number
+; computes the area of a square with side len
+; given: 2, expect: 4
+; given: 7, expect: 49
+(define (area-of-square len) 0)
+```
+
+4. Take _inventory_ - replace the function's body by with a _template_.
+
+```scheme
+(define (area-of-square len)
+   (... len ...))
+```
+
+5. Write executable expressions and function definitions
+
+```scheme
+(define (area-of-square len)
+  (sqr len))
+```
+
+6. Test the function on the examples from 3.
+
+```scheme
+> (area-of-square 2)
+4
+> (area-of-square 7)
+49
+```
+
+### 3.2 Finger Exercises: Functions
+
+### 3.3 Domain Knowledge
+
+**Domain knowledge** is essential for writing the body of a fonction. It encompasses:
+
+- external domain knowledge (mathematics, biology, music, art...)
+- programming library knowledge
+
+Problems that demand domain knowledge often emerge from analyzing **data definitions**.
+
+### 3.4 From Functions to Programs
+
+Programs often consist of several functions and constants, not just a single function.
+
+Constants can simplify functions by providing **global**, reusable values.
+
+Maintain a _wish list_ of all the functions needed to complete the program. Each entry should include:
+
+- function name
+- signature
+- purpose statement
+
+Tackle function from the _wish list_ systematically. If a function reveals the need for additionnal helper functions, add them to the _wish list_. When the list is empty, you are done.
+
+### 3.5 On Testing
+
+Testing helps identify and prevent bugs. Automated testing ensures consistent and efficient verification of program functionality.
+
+```scheme
+; Number -> Number
+; converts Fahrenheit temperatures to Celsius
+(check-expect (f2c -40) -40)
+(check-expect (f2c 32) 0)
+(check-expect (f2c 212) 100)
+
+(define (f2c f)
+  (* 5/9 (- f 32)))
+```
+
+This automated approach is known as **unit testing**.
+
+### 3.6 Designing World Programs
+
+World programs are build with the `2htdp/universe` library.
+
+> Wish list for designing world programs
+
+```scheme
+; WorldState: data that represents the state of the world (cw)
+
+; WorldState -> Image
+; when needed, big-bang obtains the image of the current
+; state of the world by evaluating (render cw)
+(define (render ws) ...)
+
+; WorldState -> WorldState
+; for each tick of the clock, big-bang obtains the next
+; state of the world from (clock-tick-handler cw)
+(define (clock-tick-handler cw) ...)
+
+; WorldState String -> WorldState
+; for each keystroke, big-bang obtains the next state
+; from (keystroke-handler cw ke); ke represents the key
+(define (keystroke-handler cw ke) ...)
+
+; WorldState Number Number String -> WorldState
+; for each mouse gesture, big-bang obtains the next state
+; from (mouse-event-handler cw x y me) where x and y are
+; the coordinates of the event and me is its description
+(define (mouse-event-handler cw x y me) ...)
+
+; WorldState -> Boolean
+; after each event, big-bang evaluates (end? cw)
+(define (end? cw) ...)
+```
+
+**Sample Problem**: Design a program that moves a car from left to right on the world canvas, three pixels per clock tick.
+
+1. Define constants
+
+```scheme
+(define WIDTH-OF-WORLD 200)
+
+(define WHEEL-RADIUS 5)
+(define WHEEL-DISTANCE (* WHEEL-RADIUS 5))
+(define WHEEL
+  (circle WHEEL-RADIUS "solid" "black"))
+
+(define SPACE
+  (rectangle ... WHEEL-RADIUS ... "white"))
+(define BOTH-WHEELS
+  (beside WHEEL SPACE WHEEL))
+```
+
+2. Define world state
+
+```scheme
+; A WorldState is a Number.
+; interpretation the number of pixels between
+; the left border of the scene and the car
+```
+
+3. Design functions to form a valid [big-bang](https://docs.racket-lang.org/teachpack/2htdpuniverse.html#%28form._world._%28%28lib._2htdp%2Funiverse..rkt%29._big-bang%29%29) expression.
+
+```scheme
+; WorldState -> Image
+; places the image of the car x pixels from
+; the left margin of the BACKGROUND image
+(define (render x)
+  BACKGROUND)
+
+; WorldState -> WorldState
+; adds 3 to x to move the car right
+(define (tock x)
+  x)
+```
+
+4. Create a `main` function to launch the world program.
+
+```scheme
+; WorldState -> WorldState
+; launches the program from some initial state
+(define (main ws)
+   (big-bang ws
+     [on-tick tock]
+     [to-draw render]))
+```
+
+You can launch the program with `(main 13)` to watch the car start at 13 pixels from the left margin.
+
+### 3.7 Virtual Pet Worlds
