@@ -535,3 +535,62 @@ World programs are build with the `2htdp/universe` library.
 You can launch the program with `(main 13)` to watch the car start at 13 pixels from the left margin.
 
 ### 3.7 Virtual Pet Worlds
+
+## 4 Intervals, Enumerations, and Itemizations
+
+### 4.1 Programming with Conditionals
+
+`cond` is a construct for writing conditional (multi-branch) logic in a clean, readable way.
+
+```scheme
+(cond [question-expression answer-expression] ...)
+(cond [question-expression answer-expression]
+      ...
+      [else answer-expression])
+```
+
+Example:
+
+```scheme
+(define (next traffic-light-state)
+  (cond
+    [(string=? "red" traffic-light-state) "green"]
+    [(string=? "green" traffic-light-state) "yellow"]
+    [(string=? "yellow" traffic-light-state) "red"]))
+```
+
+### 4.2 Computing Conditionally
+
+DrRacket checks conditions one by one in order.
+
+- If a condition evaluates to `#true`, it executes the corresponding result and stops.
+- If no conditions evaluate to`#true`, the `else` clause (if present) is executed.
+
+### 4.3: Enumerations
+
+An enumeration defines a **collection of data** as a **finite** number of pieces of data.
+
+```scheme
+; A TrafficLight is one of the following Strings:
+; – "red"
+; – "green"
+; – "yellow"
+; interpretation the three strings represent the three
+; possible states that a traffic light may assume
+```
+
+Use enumerations when:
+
+- A data type has a **finite** set of **distinct values**.
+- Each possible value needs to be **handled explicitly**.
+
+```scheme
+; TrafficLight -> TrafficLight
+; yields the next state given current state s
+(check-expect (traffic-light-next "red") "green")
+(define (traffic-light-next s)
+  (cond
+    [(string=? "red" s) "green"]
+    [(string=? "green" s) "yellow"]
+    [(string=? "yellow" s) "red"]))
+```
