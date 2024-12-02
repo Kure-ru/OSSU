@@ -594,3 +594,12 @@ Use enumerations when:
     [(string=? "green" s) "yellow"]
     [(string=? "yellow" s) "red"]))
 ```
+
+### 4.4 Intervals
+
+An **interval** describes a range of numbers with specified boundaries. Boundaries can be **inclusive** (closed) or **exclusive** (open).
+
+- Closed boundary: includes the boundary value `[3, 5]`
+- Open boundary: excludes the boundary value `(3, 5)`
+
+### 4.5 Itemizations
