@@ -23,7 +23,7 @@
 
 ;; ListOfNumber is one of:
 ;;  - empty
-;;  - (const Number ListOfNumber)
+;;  - (cons Number ListOfNumber)
 ;; interp. each number in the list is an owl weight in ounces
 (define LON1 empty)
 (define LON2 (cons 60 (cons 43 empty)))

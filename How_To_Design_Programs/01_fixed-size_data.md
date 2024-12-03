@@ -603,3 +603,5 @@ An **interval** describes a range of numbers with specified boundaries. Boundari
 - Open boundary: excludes the boundary value `(3, 5)`
 
 ### 4.5 Itemizations
+
+**Itemization** combine intervals, enumerations and individual data elements into a single cohesive definition.
