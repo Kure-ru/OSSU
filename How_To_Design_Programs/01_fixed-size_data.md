@@ -605,3 +605,22 @@ An **interval** describes a range of numbers with specified boundaries. Boundari
 ### 4.5 Itemizations
 
 **Itemization** combine intervals, enumerations and individual data elements into a single cohesive definition.
+
+```scheme
+; An LRCD (for launching rocket countdown) is one of:
+; – "resting"
+; – a Number between -3 and -1
+; – a NonnegativeNumber
+; interpretation a grounded rocket, in countdown mode,
+; a number denotes the number of pixels between the
+; top of the canvas and the rocket (its height)
+```
+
+### 4.6 Designing with Itemizations
+
+Design recipe rules:
+
+1. A data definition must use distinct _clauses_ for each sub-class of data.
+2. Signature, purpose statement, function header
+3. Examples: pick at least one example from each sub-class in the data definition. If a sub class is a finite range, pick examples from the boundaries of the range and its interior.
+4. The template mirrors the organization of sub-classes with a [cond](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29)
