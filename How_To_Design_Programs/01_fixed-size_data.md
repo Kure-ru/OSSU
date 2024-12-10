@@ -624,3 +624,15 @@ Design recipe rules:
 2. Signature, purpose statement, function header
 3. Examples: pick at least one example from each sub-class in the data definition. If a sub class is a finite range, pick examples from the boundaries of the range and its interior.
 4. The template mirrors the organization of sub-classes with a [cond](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29)
+
+### 4.7 Finite State Worlds
+
+A _Finite State Machine_ (FSM) or _Finite State Automaton_ (FSA) is a system with a limited set of states and specific transitions between them.It is composed of:
+
+- **states**: different configurations of the system
+- **transitions**: define how the system moves from one state to another
+- **triggers**: external factors that cause transitions
+
+Use a **data definition** to represent the states of a FSM. (see [4.3: Enumerations](#43-enumerations))
+
+Write functions to handle state transitions and render states.
