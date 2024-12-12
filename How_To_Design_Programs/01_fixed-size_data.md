@@ -636,3 +636,27 @@ A _Finite State Machine_ (FSM) or _Finite State Automaton_ (FSA) is a system wit
 Use a **data definition** to represent the states of a FSM. (see [4.3: Enumerations](#43-enumerations))
 
 Write functions to handle state transitions and render states.
+
+## 5 Adding Structure
+
+### 5.1 From Positions to `posn` Structures
+
+DrRacket uses `posn` structures to combine two number into a single value, representing a position.
+
+```scheme
+(make-posn 3 4)   ;x = 3 ;y = 4
+```
+
+`posn` structures are treated like other basic data types. They can be consumed and produced by both primitive operation and functions.
+
+### 5.2 Computing with `posns`
+
+`posn` structures represent Cartesian points or positions on a plane, similar to how positions are represented in mathematics.
+
+To retrieve the x-coordinate or y-coordinate from a `posn`:
+
+```scheme
+(define p (make-posn 31 26))
+(posn-x p) ;31
+(posn-y p) ;26
+```
