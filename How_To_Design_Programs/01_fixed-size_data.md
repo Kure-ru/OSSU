@@ -660,3 +660,5 @@ To retrieve the x-coordinate or y-coordinate from a `posn`:
 (posn-x p) ;31
 (posn-y p) ;26
 ```
+
+### 5.3 Programming with `posn`
