@@ -662,3 +662,61 @@ To retrieve the x-coordinate or y-coordinate from a `posn`:
 ```
 
 ### 5.3 Programming with `posn`
+
+### 5.4 Defining Structure Types
+
+The syntax for defining a new structure type is `(define-struct StructureName [FieldName...])`
+
+E.g.
+
+```scheme
+(define-struct entry [name phone email])
+```
+
+A structure type definition defines simultaneously:
+
+- one **constructor**, a function that creates **structure instances**
+
+```scheme
+(make-entry "Al Abe" "666-7771" "lee@x.me")
+```
+
+- one **selector**, which extracts the value of the field from a structure instance
+
+```scheme
+(entry-name  x)
+(entry-phone x)
+(entry-email x)
+```
+
+- one **structure predicate**, which distinguishes instances from all other kinds of values
+
+```scheme
+(entry? x)
+```
+
+### 5.5 Computing with Structures
+
+Structures can have **arbitrary** numbers of fields.
+
+### 5.6 Programming with Structures
+
+Structures provide a way to represent more complex data in a program.
+Eample of an _updater_ / _functional setter_ function.
+
+```scheme
+(define (x+ p)
+  (posn-up-x p (+ (posn-x p) 3)))
+```
+
+Use **consistent** field meanings for a structure within a program.
+Break down tasks into **helper functions**, especially when dealing with nested structures.
+Follow the **design recipe** to manage conplexity.
+
+### 5.7 The Universe of Data
+
+Every programming language has a _universe of data_, which includes all built-in data and data any program may create.
+This universe is **infinite** because it includes all numbers, strings and other possible data combinations.
+
+Data definitions help specify and restrict parts of the data universe.
+Structures expand the universe with new combinations.
