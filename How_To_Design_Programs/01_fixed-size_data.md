@@ -720,3 +720,28 @@ This universe is **infinite** because it includes all numbers, strings and other
 
 Data definitions help specify and restrict parts of the data universe.
 Structures expand the universe with new combinations.
+
+### 5.8 Designing with Structures
+
+Structures group related pieces of information into a single entity. When designing functions that consume structures, the **design recipe** is as follows:
+
+1. Define a structure using `define-struct` along with a **dat definition** and examples
+
+```scheme
+(define-struct ball (x y))
+;; Ball is (make-ball Number Number)
+;; interp. a ball at position x, y
+
+(define BALL-1 (make-ball 6 10)) ;example of a Ball
+```
+
+2. Use the **selectors** for each field of the structure. The function template should include **all selectors** for the given structure type.
+
+```scheme
+#;
+(define (fn-for-ball b)
+  (... (ball-x b)     ;Number
+       (ball-y b)))   ;Number
+;; Template rules used:
+;;  - compound: 2 fields
+```
