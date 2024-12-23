@@ -745,3 +745,22 @@ Structures group related pieces of information into a single entity. When design
 ;; Template rules used:
 ;;  - compound: 2 fields
 ```
+
+### 5.9 Structure in the World
+
+When a world program must track multiple pieces of data, use a **structure** with fields for each independent element of information.
+
+```scheme
+;; For a space game with a UFO and a tank:
+
+(define-struct space-game [ufo tank])
+; A SpaceGame is a structure:
+;   (make-space-game Posn Number).
+; interpretation (make-space-game (make-posn ux uy) tx)
+; describes a configuration where the UFO is
+; at (ux,uy) and the tank's x-coordinate is tx
+```
+
+### 5.10 A Graphical Editor
+
+### 5.11 More Virtual Pets
