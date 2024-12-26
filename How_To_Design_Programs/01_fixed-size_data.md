@@ -764,3 +764,34 @@ When a world program must track multiple pieces of data, use a **structure** wit
 ### 5.10 A Graphical Editor
 
 ### 5.11 More Virtual Pets
+
+## 6 Itemizations and Structures
+
+### 6.1 Designing with Itemizations, Again
+
+An _itemization_ describes **data comprised of 2 or more subclasses, at least one of which is not a distinct item**.
+
+1. Structure definition
+2. Type comment that defines a new type name and describes how to form data of that type
+3. An interpretation that describes the correspondence between information and data
+4. One or more examples of the data.
+5. A template for a 1 argument function operating on data of this type.
+
+```scheme
+;; Bird is one of:
+;;  - false
+;;  - Number
+;; interp. false means no bird, number is x position of bird
+
+(define B1 false)
+(define B2 3)
+
+#;
+(define (fn-for-bird b)
+  (cond [(false? b) (...)]
+        [(number? b) (... b)]))
+;; Template rules used:
+;;  - one of: 2 cases
+;;  - atomic distinct: false
+;;  - atomic non-distinct: Number
+```
