@@ -795,3 +795,24 @@ An _itemization_ describes **data comprised of 2 or more subclasses, at least on
 ;;  - atomic distinct: false
 ;;  - atomic non-distinct: Number
 ```
+
+### 6.2 Mixing Up Worlds
+
+### 6.3 Input Errors
+
+**Predicates** help verify that input data matches expected types. They are crucial when designing functions for mixed or unpredictable data, especially when sharing programs with others.
+
+**Checked functions** include explicit input validation. Use predicates such as `number?` or `string?` to test data types.
+Signal invalid input errors with informative messages using the `error` function.
+
+```scheme
+; Any -> Number
+; computes the area of a disk with radius v,
+; if v is a number
+(define (checked-area-of-disk v)
+  (cond
+    [(number? v) (area-of-disk v)]
+    [else (error "area-of-disk: number expected")]))
+```
+
+The `Any` type refers to any BSL value and is open-ended.
