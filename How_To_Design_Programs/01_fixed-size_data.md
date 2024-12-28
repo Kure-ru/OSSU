@@ -816,3 +816,54 @@ Signal invalid input errors with informative messages using the `error` function
 ```
 
 The `Any` type refers to any BSL value and is open-ended.
+
+### 6.4 Checking the World
+
+World programs handle multiple events (e.g. clock ticks, mouse clicks, keystrokes, rendering), increasing complexity.
+Errors may not surface immediately when incorrect data is passed between event-handling functions, leading to hard-to-diagnose bugs.
+
+The `big-bang` function in BSL offers a `check-with` clause to validate world states after every event.
+
+```scheme
+(define (main s0)
+  (big-bang s0 ... [check-with number?] ...))
+```
+
+Any invalid state stops the program and provides an error message.
+
+### 6.5 Equality Predicates
+
+An **equality predicate** is a function that compares two elements of the same collection of data.
+
+```scheme
+; TrafficLight TrafficLight -> Boolean
+; are the two (states of) traffic lights equal
+
+(check-expect (light=? "red" "red") #true)
+(check-expect (light=? "red" "green") #false)
+(check-expect (light=? "green" "green") #true)
+(check-expect (light=? "yellow" "yellow") #true)
+
+(define (light=? a-value another-value)
+  (string=? a-value another-value))
+```
+
+If inputs of unexpected types are provide, the program may produce runtime errors.
+
+```scheme
+> (light=? "beans" 10)
+string=?:expects a string as 2nd argument, given 10
+```
+
+Ensure inputs belong to the expected data collection before comparing them
+
+```scheme
+; Any -> Boolean
+; is the given value an element of TrafficLight
+(define (light? x)
+  (cond
+    [(string? x) (or (string=? "red" x)
+                     (string=? "green" x)
+                     (string=? "yellow" x))]
+    [else #false]))
+```
