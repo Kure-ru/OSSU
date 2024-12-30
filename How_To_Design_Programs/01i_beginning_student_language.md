@@ -47,3 +47,37 @@ BSL allows flexibility with whitespace, but it must separate elements in a seque
 Proper formatting and whitespace usage improve code readability.
 
 > Keep in mind that two kinds of readers study your BSL programs: people and DrRacket.
+
+## BSL Meaning
+
+When DrRacket evaluates an expression, it uses the laws of arithmetic and algebra to obtain a **value**.
+
+```scheme
+(+ 1 1) == 2
+(- 2 1) == 1
+
+(not #true)        == #false
+(string=? "a" "a") == #true
+```
+
+When a function is applied, its body is **evaluated** with **arguments** substituted for **parameters**.
+
+```scheme
+(define (poly x y)
+  (+ (expt 2 x) y))
+        ⬇️
+(poly 3 5) == (+ (expt 2 3) 5) ... == (+ 8 5) == 13
+```
+
+When evaluating `cond` expressions, when a condition evaluates to `#false`, that line is removed.
+
+```scheme
+(cond                    == (cond
+  [#false ...]               ; first line removed
+  [condition2 answer2]       [condition2 answer2]
+  ...)                       ...)
+```
+
+## Meaning and Computing
+
+The **stepper** is a tool in DrRacket that simulates the evaluation process step by step. It helps understand how language constructs work by breaking down the evaluation process.
