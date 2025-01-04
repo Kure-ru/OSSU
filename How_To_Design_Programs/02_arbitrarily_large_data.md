@@ -134,3 +134,5 @@ The last step is a _leap of faith_ to assume the recursion works.
 6. Tests
 
 Turn the examples into `check-expect` tests and run them
+
+### 9.1 Finger Exercises: Lists
