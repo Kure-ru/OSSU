@@ -24,7 +24,8 @@ It is designed according to the degree requirements of undergraduate computer sc
 
 | Courses                                                                                  | Duration |     Effort      | Completion |                              Topics                               |
 | :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
-| [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |    ⬜️     | `program design` `functional programming` `testing` `abstraction` |
+| [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |     ✅     | `program design` `functional programming` `testing` `abstraction` |
+| [Class-based Program Design](https://course.ccs.neu.edu/cs2510sp22/index.html)           | 13 weeks | 5-10 hours/week |    ⬜️     | `object-oriented design` `data structures` `algorithm complexity` |
 
 #### Readings
 
