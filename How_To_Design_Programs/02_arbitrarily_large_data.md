@@ -136,3 +136,40 @@ The last step is a _leap of faith_ to assume the recursion works.
 Turn the examples into `check-expect` tests and run them
 
 ### 9.1 Finger Exercises: Lists
+
+### 9.2: Non-Empty Lists
+
+### 9.3 Natural Numbers
+
+- `(make-list i x) → list?` Constructs a list of i copies of x.
+
+```scheme
+> (make-list 2 "hello")
+(cons "hello" (cons "hello" '()))
+
+> (make-list 3 true)
+(cons true (cons true (cons true '())))
+
+> (make-list 0 17)
+'()
+```
+
+- Natural numbers
+
+```scheme
+; An N is one of:
+; – 0
+; – (add1 N)
+; interpretation represents the counting numbers
+```
+
+Natural numbers are **recursive**, much like lists.
+
+Here are some functions used with natural numbers
+
+|             |                                                                 |
+| ----------- | --------------------------------------------------------------- |
+| `add1`      | adds 1 to a number, acts like a constructor for natural numbers |
+| `sub1`      | subtracts 1                                                     |
+| `zero?`     | predicate to check if a number is 0                             |
+| `positive?` | predicate to check if a number is > 0                           |
