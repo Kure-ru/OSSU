@@ -173,3 +173,14 @@ Here are some functions used with natural numbers
 | `sub1`      | subtracts 1                                                     |
 | `zero?`     | predicate to check if a number is 0                             |
 | `positive?` | predicate to check if a number is > 0                           |
+
+### 9.4 Russian Dolls
+
+### 9.5 Lists and World
+
+### 9.6 A Note on Lists and Sets
+
+**Sets** are about the membership of elements, where order and number of occurrences are irrelevant.
+**Lists** are finite collections, but their size can be arbitrarily large.
+
+BSL doesn't have built-in support for sets.
