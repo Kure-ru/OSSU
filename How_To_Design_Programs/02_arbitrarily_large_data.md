@@ -184,3 +184,56 @@ Here are some functions used with natural numbers
 **Lists** are finite collections, but their size can be arbitrarily large.
 
 BSL doesn't have built-in support for sets.
+
+## 10 More on Lists
+
+### 10.1 Functions that Produce Lists
+
+### 10.2 Structures in Lists
+
+Lists can hold **structures** which are more suitable for representing data with multiple attributes.
+
+```scheme
+(define-struct work [employee rate hours])
+; A (piece of) Work is a structure:
+;   (make-work String Number Number)
+; interpretation (make-work n r h) combines the name
+; with the pay rate r and the number of hours h
+
+; Low (short for list of works) is one of:
+; – '()
+; – (cons Work Low)
+; interpretation an instance of Low represents the
+; hours worked for a number of employees
+```
+
+### 10.3 Lists in Lists, Files
+
+`read-file` reads an entire text file as a single string.
+
+```scheme
+; String -> String
+; produces the content of file f as a string
+(define (read-file f) ...)
+
+; String -> List-of-string
+; produces the content of file f as a list of strings,
+; one per line
+(define (read-lines f) ...)
+
+; String -> List-of-string
+; produces the content of file f as a list of strings,
+; one per word
+(define (read-words f) ...)
+
+; String -> List-of-list-of-string
+; produces the content of file f as a list of list of
+; strings, one list per line and one string per word
+(define (read-words/line f) ...)
+
+; The above functions consume the name of a file as a String
+; argument. If the specified file does not exist in the
+; same folder as the program, they signal an error.
+```
+
+### 10.4 A Graphical Editor, Revisited
