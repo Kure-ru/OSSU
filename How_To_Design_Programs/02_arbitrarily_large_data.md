@@ -237,3 +237,63 @@ Lists can hold **structures** which are more suitable for representing data with
 ```
 
 ### 10.4 A Graphical Editor, Revisited
+
+## 11 Design by Composition
+
+Programs require collaboration between `multiple` functions.
+
+### 11.1 The `list` function
+
+`list` consumes an arbitrary number of values and creates a list.
+
+```scheme
+(list 1 2 3)
+;; is the same as
+(cons 1 (cons 2 (cons 3 '())))
+```
+
+### 11.2 Composing Functions
+
+#### functions should do one task
+
+- break programs into multiple functions
+- each function should handle one specific task
+- use **auxiliary** functions when tasks depend on other data or need to be broken down
+
+#### When to create auxiliary functions?
+
+- domain-specific knowledge needed
+- complexe case analysis
+- self-referential data
+- generalizing the functions
+
+#### use a wish list
+
+- write down function headers for functions you still need to write
+
+### 11.3 Auxiliary Functions that Recur
+
+When writing recursive functions (like sorting a list), you’ll often need **auxiliary functions** to handle specific sub-tasks — especially when inserting or processing elements one by one.
+
+```scheme
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Sorting lists of numbers ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; List-of-numbers -> List-of-numbers
+; produces a sorted version of l
+(define (sort> l)
+  (cond
+    [(empty? l) '()]
+    [(cons? l) (insert (first l) (sort> (rest l)))]))
+ 
+; Number List-of-numbers -> List-of-numbers
+; inserts n into the sorted list of numbers l 
+(define (insert n l)
+  (cond
+    [(empty? l) (cons n '())]
+    [else (if (>= n (first l))
+              (cons n l)
+              (cons (first l) (insert n (rest l))))]))
+```
