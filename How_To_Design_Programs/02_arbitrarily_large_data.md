@@ -287,9 +287,9 @@ When writing recursive functions (like sorting a list), you’ll often need **au
   (cond
     [(empty? l) '()]
     [(cons? l) (insert (first l) (sort> (rest l)))]))
- 
+
 ; Number List-of-numbers -> List-of-numbers
-; inserts n into the sorted list of numbers l 
+; inserts n into the sorted list of numbers l
 (define (insert n l)
   (cond
     [(empty? l) (cons n '())]
@@ -297,3 +297,7 @@ When writing recursive functions (like sorting a list), you’ll often need **au
               (cons n l)
               (cons (first l) (insert n (rest l))))]))
 ```
+
+### 11.4 Auxiliary Functions that Generalize
+
+General-purpose helper functions make your code cleaner, more reusable, and easier to test.
