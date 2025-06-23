@@ -301,3 +301,29 @@ When writing recursive functions (like sorting a list), you’ll often need **au
 ### 11.4 Auxiliary Functions that Generalize
 
 General-purpose helper functions make your code cleaner, more reusable, and easier to test.
+
+## 12 Projects: Lists
+
+### 12.1 Real-World Data: Dictionaries
+
+Real-world data sets (like dictionaries) are huge—hundreds of thousands of entries.
+
+You must **test your code on small examples** first before running it on large data.
+
+Then you **analyze performance** and optimize if needed.
+
+```scheme
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Reading a dictionnary ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; On OS X:
+(define LOCATION "/usr/share/dict/words")
+; On LINUX: /usr/share/dict/words or /var/lib/dict/words
+; On WINDOWS: borrow the word file from your Linux friend
+
+; A Dictionary is a List-of-strings.
+(define AS-LIST (read-lines LOCATION))
+```
+
+### 12.2 Real-World Data: iTunes
