@@ -63,3 +63,9 @@ A **parametric data definition** lets you write **one template** with a placehol
 ```
 
 Like a function abstracts over _values_, **parametric data definitions** abstract away the type of _contents_.
+
+### 14.4 Functions Are Values
+
+Functions (and primitive operations like `<` , `+`, ...) can be **passed as arguments** to other functions.
+
+### 14.5 Computing with Functions
