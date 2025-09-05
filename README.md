@@ -10,11 +10,25 @@ It is designed according to the degree requirements of undergraduate computer sc
 
 ## Intro CS - Maths
 
+### Intro CS
+
 | Courses                                                                                       | Duration |      Effort      | Completion |                              Topics                              |
 | :-------------------------------------------------------------------------------------------- | :------: | :--------------: | :--------: | :--------------------------------------------------------------: |
 | [Python for Everybody](https://github.com/Kure-ru/OSSU/tree/main/py4e)                        | 10 weeks |  10 hours/week   |     ✅     |            `simple programs` `simple data structures`            |
 | [Introduction to Computer Science - CS50](https://cs50.harvard.edu/x/)                        | 12 weeks | 10-20 hours/week |     ✅     | `problem-solving` `algorithms` `data structures` `C programming` |
-| [Introduction to Mathematical Thinking](https://www.coursera.org/learn/mathematical-thinking) | 10 weeks |   4 hours/week   |    ⬜️     |              `Mathematical mindset` `Number Theory`              |
+
+### Prerequisite maths
+
+Courses | Duration | Effort | Prerequisites | Completion
+:-- | :--: | :--: | :--: | :--:
+[Arithmetic](/coursepages/arithmetic/README.md) | 20 Weeks | 8 hours/week | None |  ⬜️ 
+[Pre-Algebra](/coursepages/pre-algebra/README.md) | 14 Weeks | 6 hours/week | Arithmetic | ⬜️ 
+[Algebra 1](/coursepages/algebra-1/README.md) | 19 Weeks | 8 hours/week | Pre-Algebra |  ⬜️ 
+[Geometry](/coursepages/geometry/README.md) | 25 Weeks | 8 hours/week | Algebra 1 |  ⬜️ 
+[Algebra 2](/coursepages/algebra-2/README.md) | 28 Weeks | 8 hours/week | Algebra 1, Geometry |  ⬜️ 
+[Trigonometry](/coursepages/trigonometry/README.md) | 18 Weeks | 8 hours/week | Algebra 2, Geometry |  ⬜️ 
+[Precalculus](/coursepages/precalculus/README.md) | 26 Weeks | 9 hours/week | Trigonometry |  ⬜️ 
+
 
 ## Core CS
 
@@ -25,7 +39,8 @@ It is designed according to the degree requirements of undergraduate computer sc
 | Courses                                                                                  | Duration |     Effort      | Completion |                              Topics                               |
 | :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
 | [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |     ✅     | `program design` `functional programming` `testing` `abstraction` |
-| [Class-based Program Design](https://github.com/Kure-ru/cs2510)                          | 13 weeks | 5-10 hours/week |    ⬜️     | `object-oriented design` `data structures` `algorithm complexity` |
+| [Class-based Program Design](https://github.com/Kure-ru/cs2510)                          | 13 weeks | 5-10 hours/week |     ✅     | `object-oriented design` `data structures` `algorithm complexity` |
+| [Programming Languages](https://courses.cs.washington.edu/courses/cse341/19au/#lectures) | 13 weeks | 5-10 hours/week |     ⬜️     | `functional design` `software design patterns` `data structures`  |
 
 #### Readings
 
