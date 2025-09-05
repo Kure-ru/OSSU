@@ -21,7 +21,7 @@ It is designed according to the degree requirements of undergraduate computer sc
 
 Courses | Duration | Effort | Prerequisites | Completion
 :-- | :--: | :--: | :--: | :--:
-[Arithmetic](/coursepages/arithmetic/README.md) | 20 Weeks | 8 hours/week | None |  ⬜️ 
+[Arithmetic](https://www.youtube.com/playlist?list=PLm2VEQtiYjhpTTgxTVCXVcpYWDUqiewiQ) | 20 Weeks | 8 hours/week | None |  ⬜️ 
 [Pre-Algebra](/coursepages/pre-algebra/README.md) | 14 Weeks | 6 hours/week | Arithmetic | ⬜️ 
 [Algebra 1](/coursepages/algebra-1/README.md) | 19 Weeks | 8 hours/week | Pre-Algebra |  ⬜️ 
 [Geometry](/coursepages/geometry/README.md) | 25 Weeks | 8 hours/week | Algebra 1 |  ⬜️ 
