@@ -1,2 +1,0 @@
-fruit = "banana"
-print(fruit[:])
