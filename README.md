@@ -39,7 +39,8 @@ It is designed according to the degree requirements of undergraduate computer sc
 | :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
 | [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |     ✅     | `program design` `functional programming` `testing` `abstraction` |
 | [Class-based Program Design](https://github.com/Kure-ru/cs2510)                          | 13 weeks | 5-10 hours/week |     ✅     | `object-oriented design` `data structures` `algorithm complexity` |
-| [Programming Languages](https://courses.cs.washington.edu/courses/cse341/19au/#lectures) | 11 weeks | 4-8 hours/week  |     ✅     | `functional design` `software design patterns` `data structures`  |
+| [Programming Languages](https://courses.cs.washington.edu/courses/cse341/19au/#lectures) | 11 weeks | 4-8 hours/week  |     ✅     | `ML-family languages` `Lisp-family languages (via Racket)` `Ruby` |
+| [Object-Oriented Design](https://course.ccs.neu.edu/cs3500f19/)                          | 13 weeks | 5-10 hours/week |    ⬜️     |         `object-oriented design` `common design patterns`         |
 
 #### Readings
 
