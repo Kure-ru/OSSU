@@ -22,7 +22,7 @@ It is designed according to the degree requirements of undergraduate computer sc
 | Courses                                                                                | Duration |    Effort    |    Prerequisites    | Completion |
 | :------------------------------------------------------------------------------------- | :------: | :----------: | :-----------------: | :--------: |
 | [Arithmetic](https://www.youtube.com/playlist?list=PLm2VEQtiYjhpTTgxTVCXVcpYWDUqiewiQ) | 20 Weeks | 8 hours/week |        None         |     ✅     |
-| [Pre-Algebra](/coursepages/pre-algebra/README.md)                                      | 14 Weeks | 6 hours/week |     Arithmetic      |    ⬜️     |
+| [Pre-Algebra](https://www.youtube.com/watch?v=1Sx5iW00fFQ&list=PLm2VEQtiYjhoZuRqvrC_dxSrwr0uexm4l) | 14 Weeks | 6 hours/week |     Arithmetic      |    ⬜️     |
 | [Algebra 1](/coursepages/algebra-1/README.md)                                          | 19 Weeks | 8 hours/week |     Pre-Algebra     |    ⬜️     |
 | [Geometry](/coursepages/geometry/README.md)                                            | 25 Weeks | 8 hours/week |      Algebra 1      |    ⬜️     |
 | [Algebra 2](/coursepages/algebra-2/README.md)                                          | 28 Weeks | 8 hours/week | Algebra 1, Geometry |    ⬜️     |
@@ -47,3 +47,4 @@ It is designed according to the degree requirements of undergraduate computer sc
 | Name                                                                                 | Author(s)                                                                      | Completion |
 | :----------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- | :--------: |
 | [How to Design Programs, Second Edition](https://htdp.org/2023-8-14/Book/index.html) | Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi |    ⬜️     |
+| [Head First Design Patterns, 2nd Edition](https://learning.oreilly.com/library/view/head-first-design) | Eric Freeman, Elisabeth Robson |    ⬜️     |
