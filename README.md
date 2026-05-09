@@ -23,7 +23,7 @@ It is designed according to the degree requirements of undergraduate computer sc
 | :------------------------------------------------------------------------------------- | :------: | :----------: | :-----------------: | :--------: |
 | [Arithmetic](https://www.youtube.com/playlist?list=PLm2VEQtiYjhpTTgxTVCXVcpYWDUqiewiQ) | 20 Weeks | 8 hours/week |        None         |     ✅     |
 | [Pre-Algebra](https://www.youtube.com/watch?v=1Sx5iW00fFQ&list=PLm2VEQtiYjhoZuRqvrC_dxSrwr0uexm4l) | 14 Weeks | 6 hours/week |     Arithmetic      |    ✅      |
-| [Algebra 1](/coursepages/algebra-1/README.md)                                          | 19 Weeks | 8 hours/week |     Pre-Algebra     |    ⬜️     |
+| [Algebra 1](https://ossu.dev/precollege-math/coursepages/algebra-1/)                   | 19 Weeks | 8 hours/week |     Pre-Algebra     |    ⬜️     |
 | [Geometry](/coursepages/geometry/README.md)                                            | 25 Weeks | 8 hours/week |      Algebra 1      |    ⬜️     |
 | [Algebra 2](/coursepages/algebra-2/README.md)                                          | 28 Weeks | 8 hours/week | Algebra 1, Geometry |    ⬜️     |
 | [Trigonometry](/coursepages/trigonometry/README.md)                                    | 18 Weeks | 8 hours/week | Algebra 2, Geometry |    ⬜️     |
@@ -33,17 +33,22 @@ It is designed according to the degree requirements of undergraduate computer sc
 
 ### Core programming
 
-#### Courses
-
 | Courses                                                                                  | Duration |     Effort      | Completion |                              Topics                               |
 | :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
 | [Systematic Program Design](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015) | 13 weeks | 8-10 hours/week |     ✅     | `program design` `functional programming` `testing` `abstraction` |
 | [Class-based Program Design](https://github.com/Kure-ru/cs2510)                          | 13 weeks | 5-10 hours/week |     ✅     | `object-oriented design` `data structures` `algorithm complexity` |
 | [Programming Languages](https://courses.cs.washington.edu/courses/cse341/19au/#lectures) | 11 weeks | 4-8 hours/week  |     ✅     | `ML-family languages` `Lisp-family languages (via Racket)` `Ruby` |
 | [Object-Oriented Design](https://course.ccs.neu.edu/cs3500f19/)                          | 13 weeks | 5-10 hours/week |     ✅     |         `object-oriented design` `common design patterns`         |
-| [Software Architecture](https://www.coursera.org/learn/software-architecture)            | 4 weeks  | 2-5 hours/week  |     ⬜️     | `Unified Modeling Language` `Software Systems` `Service Oriented Architecture` |
+| [Software Architecture](https://www.coursera.org/learn/software-architecture)            | 4 weeks  | 2-5 hours/week  |     ✅     | `Unified Modeling Language` `Software Systems` `Service Oriented Architecture` |
 
-### Core math
+### CS tools
+
+| Courses                                                                                  | Duration |     Effort      | Completion |                              Topics                               |
+| :--------------------------------------------------------------------------------------- | :------: | :-------------: | :--------: | :---------------------------------------------------------------: |
+| [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)              | 2 weeks   | 12 hours/week  |      ⬜️     | `terminals and shell scripting` `vim` `command line environments` | 
+
+
+
 
 #### Readings
 
